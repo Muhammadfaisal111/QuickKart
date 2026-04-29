@@ -11,7 +11,7 @@ const sendEmail = async ({ email, subject, message }) => {
     });
 
     const mailOptions = {
-      from: "QuickCart Support"`<${process.env.EMAIL_USER}>`,
+      from: `"QuickCart Support" <${process.env.EMAIL_USER}>`,
       to: email,
       subject,
       html: message,

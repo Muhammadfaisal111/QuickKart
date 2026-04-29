@@ -5,6 +5,7 @@ const connectDB = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoutes");
 const productRoutes = require("./src/routes/productRoutes");
 const orderRoutes = require("./src/routes/orderRoutes");
+const analyticsRoutes = require("./src/routes/analyticsRoute");
 dotenv.config();
 connectDB();
 
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/analytics", analyticsRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
